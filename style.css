@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.ground {
+  height: 10vh;
+  animation: ground 30s linear;
+}
+.dino {
+  position: absolute;
+  background-size: cover;
+  height: 90px;
+  width: 80px;
+  top: 42%;
+  left: 30px;
+  animation: run infinite 0.8s linear;
+  z-index: 100;
+  transition: 0.12s linear;
+}
+.cactus {
+  position: absolute;
+  height: 90px;
+  width: 80px;
+  top: 42%;
+  left: 30px;
+  z-index: 100;
+  animation: cactus 3s linear infinite forwards;
+}
+.jump {
+  top: 20%;
+  background: url("imgs/dino-lose.png") !important;
+  transition: 0.18s linear;
+}
+
+@keyframes cactus {
+  from {
+    transform: translateX(1500px);
+  }
+  to {
+    transform: translateX(-50vw);
+  }
+}
+@keyframes ground {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
+}
+
+@keyframes run {
+  0% {
+    background: url("imgs/dino-run-0.png");
+  }
+  100% {
+    background: url("imgs/dino-run-1.png");
+  }
+}
